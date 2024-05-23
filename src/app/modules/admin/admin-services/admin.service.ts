@@ -31,6 +31,13 @@ export class AdminService {
       headers: this.createAuthorizationHeader(),
     });
   }
+  addType(typeDto: any): Observable<any> {
+    console.log('Appel API pour ajouter une catégorie', typeDto);
+    return this.http.post(this.SERVER_URL + 'type', typeDto, {
+      headers: this.createAuthorizationHeader(),
+    });
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', 'Bearer ' + StorageService.getToken());

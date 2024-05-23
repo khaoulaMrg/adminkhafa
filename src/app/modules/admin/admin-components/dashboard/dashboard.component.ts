@@ -43,10 +43,7 @@ export class DashboardComponent implements OnInit {
       this.posts = posts;
     });
   }
-
-
   
-
   approveAndPostPost(post: PostDTO): void {
     console.log('Début de la méthode approveAndPost pour le post ID:', post.id);
     this.adminService.approvePost(post.id).pipe(
